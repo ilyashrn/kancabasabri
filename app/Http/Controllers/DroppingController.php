@@ -8,12 +8,17 @@ use App\Http\Requests;
 
 class DroppingController extends Controller
 {
+
+    public function index() {
+        return view('dropping.index');
+    }
+
     public function table(){
-    	return view ('table');
+    	return view('table');
     }
 
     public function tarik_tunai(){
-    	return view ('tariktunai');
+    	return view('tariktunai');
     }
 
     public function pengembalian(){

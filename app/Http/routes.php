@@ -12,9 +12,13 @@
 */
 
 Route::get('/', 'Controller@login');
-Route::get('/dashboard', 'Controller@show');
+Route::get('/dashboard', 'DashboardController@index');
 
-Route::get('/table', 'DroppingController@table');
+Route::group(['prefix' => 'dropping'], function() {
+	Route::resource('/', 'DroppingController');
+    Route::get('/table', 'DroppingController@table');
+});
+
 Route::get('/tariktunai', 'DroppingController@tarik_tunai');
 Route::get('/pengembalian', 'DroppingController@pengembalian');
 Route::get('/penambahan', 'DroppingController@penambahan');
