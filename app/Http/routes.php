@@ -11,18 +11,22 @@
 |
 */
 
-Route::get('/', 'Controller@login');
-Route::get('/dashboard', 'DashboardController@index');
-
-Route::group(['prefix' => 'dropping'], function() {
-	Route::resource('/', 'DroppingController');
-    Route::get('/table', 'DroppingController@table');
+Route::group(['middleware' => 'guest'], function() {
+   Route::get('/', 'Auth\AuthController@index'); 
 });
 
-Route::get('/tariktunai', 'DroppingController@tarik_tunai');
-Route::get('/pengembalian', 'DroppingController@pengembalian');
-Route::get('/penambahan', 'DroppingController@penambahan');
+Route::group(['middleware' => 'auth'], function() {
+	// Route::get('/home', 'HomeController@index');
+   	Route::get('/dashboard', 'DashboardController@index');
+
+   	Route::group(['prefix' => 'dropping'], function() {
+		Route::resource('/', 'DroppingController');
+	    Route::get('/table', 'DroppingController@table');
+	});
+
+   	Route::get('/tariktunai', 'DroppingController@tarik_tunai');
+	Route::get('/pengembalian', 'DroppingController@pengembalian');
+	Route::get('/penambahan', 'DroppingController@penambahan');
+});
 
 Route::auth();
-
-Route::get('/home', 'HomeController@index');
