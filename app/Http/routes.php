@@ -22,3 +22,7 @@ Route::group(['prefix' => 'dropping'], function() {
 Route::get('/tariktunai', 'DroppingController@tarik_tunai');
 Route::get('/pengembalian', 'DroppingController@pengembalian');
 Route::get('/penambahan', 'DroppingController@penambahan');
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');

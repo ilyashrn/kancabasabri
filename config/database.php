@@ -78,6 +78,17 @@ return [
             'schema' => 'public',
         ],
 
+        'sqlsrv' => [
+            'driver'        => 'sqlsrv',
+            'host'          => env('DB_HOST', 'localhost'),
+            'port'          => env('DB_PORT', '1433'),
+            'database'      => env('DB_DATABASE', 'dbcabang'),
+            'username'      => env('DB_USERNAME', 'sa'),
+            'password'      => env('DB_PASSWORD', 'Uncadait0'),
+            'charset'       => 'utf8',
+            'prefix'        => '',
+        ],
+
     ],
 
     /*
