@@ -26,6 +26,8 @@ For login purpose, it's used e-mail and its password for login-form fields. Here
 * ilyashabiburrahman@gmail.com - rahasia
 * admin@gmail.com - rahasia
 
+More users and passwords are available on `seeder` file `(database/seeds/UserSeeder.php)`.
+
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
