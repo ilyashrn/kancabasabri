@@ -7,6 +7,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class User extends Authenticatable
 {
     protected $connection = 'sqlsrv';
+
+    protected $dateFormat = 'Y-m-d H:i:s';
     /**
      * The attributes that are mass assignable.
      *

@@ -12,7 +12,7 @@
 */
 
 Route::group(['middleware' => 'guest'], function() {
-   Route::get('/', 'Auth\AuthController@index'); 
+   Route::get('/', 'Auth\AuthController@login'); 
 });
 
 Route::group(['middleware' => 'auth'], function() {
@@ -21,6 +21,7 @@ Route::group(['middleware' => 'auth'], function() {
 
    	Route::group(['prefix' => 'dropping'], function() {
 		Route::resource('/', 'DroppingController');
+		Route::get('/get', 'DroppingController@getAll');
 	    Route::get('/table', 'DroppingController@table');
 	});
 

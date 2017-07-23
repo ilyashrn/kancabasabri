@@ -6,14 +6,13 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\User;
-use App\FinancialTag;
+use App\Models\PaymentJournalDropping;
 
 class DashboardController extends Controller
 {
 	protected $user;
-	protected $ft;
 
-	public function __construct(User $user, FinancialTag $ft)
+	public function __construct(User $user, PaymentJournalDropping $ft)
 	{
 		$this->user = $user;
 		$this->ft = $ft;
@@ -21,7 +20,6 @@ class DashboardController extends Controller
 
     public function index()
     {
-    	dd($this->ft->get());
-    	// return view('dashboard.index');
+    	return view('dashboard.index');
     }
 }

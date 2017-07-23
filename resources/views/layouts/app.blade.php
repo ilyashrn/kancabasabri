@@ -12,7 +12,12 @@
         <link rel="shortcut icon" type="image/x-icon" href="app-assets/images/ico/favicon.ico">
         <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i%7COpen+Sans:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
         <!-- BEGIN VENDOR CSS-->
-        @yield('vendorcss')
+        <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/fonts/feather/style.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/fonts/font-awesome/css/font-awesome.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/fonts/flag-icon-css/css/flag-icon.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/vendors/css/extensions/pace.css') }}">
+        @yield('additional-vendorcss')
         <!-- END VENDOR CSS-->
         <!-- BEGIN STACK CSS-->
         <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/bootstrap-extended.min.css') }}">
@@ -41,8 +46,9 @@
                     <ul class="nav navbar-nav">
                         <li class="nav-item mobile-menu hidden-md-up float-xs-left"><a href="#" class="nav-link nav-menu-main menu-toggle hidden-xs"><i class="ft-menu font-large-1"></i></a></li>
                         <li class="nav-item">
-                            <a href="index-2.html" class="navbar-brand">
-                                <h2 class="brand-text">Kancasabri</h2>
+                            <a href="{{ url('/') }}" class="navbar-brand">
+                                <img src="{{ asset('app-assets/images/asabri-logo.png', $secure = null) }}" width="20%">
+                                <h3 class="brand-text">Kancasabri</h3>
                             </a>
                         </li>
                         <li class="nav-item hidden-md-up float-xs-right">
@@ -170,7 +176,7 @@
         </div>
         <!-- ////////////////////////////////////////////////////////////////////////////-->
 
-        <footer class="footer footer-static footer-dark navbar-border">
+        <footer class="footer footer-static footer-dark navbar-border" style="bottom: 0;">
             <p class="clearfix blue-grey lighten-2 text-sm-center mb-0 px-2">
                 <span class="float-md-left d-xs-block d-md-inline-block">Copyright &copy; 2017 <a href="https://gumcode.net/"
                                                                                                   target="_blank" class="text-bold-800 grey darken-2">Gumcode </a>, All rights
@@ -178,6 +184,14 @@
                 <span class="float-md-right d-xs-block d-md-inline-block">Hand-crafted & Made with <i class="ft-heart pink"></i></span>
             </p>
         </footer>
+        <!-- BEGIN VENDOR JS-->
+        <script src="{{ asset('app-assets/vendors/js/vendors.min.js') }}" type="text/javascript"></script>
+        <!-- BEGIN VENDOR JS-->
         @yield('customjs')
+        <!-- BEGIN STACK JS-->
+        <script src="{{ asset('app-assets/js/core/app-menu.min.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('app-assets/js/core/app.min.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('app-assets/js/scripts/customizer.min.js') }}" type="text/javascript"></script>
+        <!-- END STACK JS-->
     </body>
 </html>
