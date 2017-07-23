@@ -10,19 +10,21 @@ Kancasabri is a Laravel-based web application for do journaling transcation and 
 
 ## Installation
 
+* Run `git clone https://github.com/ilyashrn/kancabasabri kancabasabri` in Terminal/CMD
+* Move to project directory with `cd kancabasabri`
+* Run `composer install` to install dependencies
+* Run `php artisan key:generate` to generate key for .env file
+* Create database named `dbcabang` for application database and make sure `AX_DEV` is available on the server
+* Run `php artisan migrate` to generate tables on `dbcabang` database
+* Run `php artisan db:seed` to populate the tables
+* Run `php artisan vendor:publish` to publish filemanager
+* Run `php artisan serve` to run the application on `http://localhost:8000/`
 
+## Users and Passwords
 
-## Official Documentation
-
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+For login purpose, it's used e-mail and its password for login-form fields. Here are some available users : 
+* ilyashabiburrahman@gmail.com - rahasia
+* admin@gmail.com - rahasia
 
 ## License
 
